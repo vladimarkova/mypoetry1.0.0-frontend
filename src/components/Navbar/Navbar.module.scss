@@ -11,23 +11,38 @@ nav {
     color: white;
     font-size: 1.2rem;
 
-    .logo {
+    .leftSide {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
-        cursor: pointer;
-        transition: all 0.3s ease-out;
 
-        img {
-            width: 60px;
-            height: 60px;
-            margin-right: 15px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.89);
+        .logo {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease-out;
+    
+            img {
+                width: 60px;
+                height: 60px;
+                margin-right: 15px;
+                border-radius: 5px;
+                box-shadow: 0 0 10px rgba(0,0,0,0.89);
+            }
+    
+            &:hover {
+                color: rgba(51, 51, 51, 0.9);
+            }
         }
 
-        &:hover {
-            color: rgba(51, 51, 51, 0.9);
+        .addPoetry {
+            padding-left: 10px;
+
+            &:hover {
+                text-decoration: underline;
+            }
         }
     }
+
 }
