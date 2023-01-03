@@ -2,22 +2,29 @@ import { useState } from 'react';
 import styles from './Poetry.module.scss';
 
 // const poetryBackgroundImageUrl = "/mypoetry_logo.jpeg";
+interface IPoetry {
+    content: string;
+    user?: string;
+    date?: string;
+}
 
-const Poetry = () => {
+const Poetry = ({ poetry, showFav = true } : { poetry?: IPoetry, showFav?: boolean }) => {
     const [favorite, setFavorite]= useState(false);
 
     return (
-        <div className={styles.main} style={{ color: 'red' }}>
+        <div className={styles.main}>
              {/* backgroundImage: `url(${poetryBackgroundImageUrl})` */}
             <div className={styles.poetryCard}>
-                <div className={styles.favorite} onClick={() => setFavorite(!favorite)}>
+                {showFav && <div className={styles.favorite} onClick={() => setFavorite(!favorite)}>
                     {/* <img src="icons/favorite_small.svg" alt="Favorite" /> */}
                     {favorite ? 
                         (<div className={styles.fav}><i id="fav" className="fa-solid fa-heart fa-xl"></i></div>) : 
                         (<div className={styles.notFav}><i className="fa-regular fa-heart fa-xl"></i></div>)}
-                </div>
+                </div>}
                 <div className={styles.content}>
-                    <br></br>
+                    { poetry?.content }
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum eius consequuntur atque velit laudantium laboriosam. Deleniti, totam ratione aperiam autem reiciendis maiores officia quibusdam repellendus, magnam aspernatur minus unde debitis ad dolorem natus numquam sapiente quidem molestias quos! Animi doloremque reprehenderit molestiae veritatis voluptatum beatae recusandae odit ea unde alias?
+                    {/* <br></br>
                     И няма да пиша днес.
                     <br></br>
                     Не, няма. А само ще слушам.
@@ -44,17 +51,17 @@ const Poetry = () => {
                     <br></br>
                     Това е да бъдеш. И просто да слушаш!
                     <br></br>
-                    <br />
+                    <br /> */}
                     <div className={styles.heart}>
                     ❤
                     </div>
                 </div>
                 <div className={styles.info}>
                     <div className={styles.date}>
-                        24.12.2021
+                        { poetry?.date || '24.12.2021'}
                     </div>
                     <div className={styles.author}>
-                        Влади М.
+                        { poetry?.user || 'Влади М.' }
                     </div>
                 </div>
             </div>

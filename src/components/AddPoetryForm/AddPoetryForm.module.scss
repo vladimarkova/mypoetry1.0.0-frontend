@@ -1,0 +1,91 @@
+.main {
+    display: flex;
+    justify-content: space-around;
+    // align-items: center;
+
+    .formContainer {
+        width: 480px;
+        max-height: 400px; // TODO: fix to be flexible
+        background-color: white;
+        border-radius: 7px;
+        padding: 10px 0px;
+        position: relative;
+        top: 60px;
+
+        .headings {
+            padding: 5px 0px;
+            text-align: center;
+            border-bottom: 1.3px solid rgba(51, 51, 51, 0.2);
+        }
+
+        .userInfo {
+            display: flex;
+            align-items: center;
+            padding: 15px 25px;
+
+            img {
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                box-shadow: 0 0 10px rgba(0,0,0,0.65);
+                margin-right: 7px;
+            }
+
+            // h5 {
+            //     align-self: flex-start;
+            // }
+        }
+
+        .formContent {
+            display: flex;
+            flex-direction: column;
+            padding: 15px 25px;
+            justify-content: space-between;
+
+            textArea {
+                padding-bottom: 15px;
+                border: none;
+                overflow: auto;
+                resize: none;
+
+                &:active, &:focus {
+                    outline: none;
+                }
+            }
+
+            input {
+                padding-bottom: 25px;
+                border: none;
+                overflow: auto;
+                resize: none;
+
+                &:active, &:focus {
+                    outline: none;
+                }
+            }
+
+            button {
+                border: none;
+                border-radius: 5px;
+                padding: 10px 50px;
+                // background-color: steelblue;
+                // color: white;
+                cursor: pointer;
+                transition: all 0.3s ease-out;
+
+                &:hover {
+                    background-color: steelblue;
+                    color: white;
+                }
+            }
+
+        }
+    }
+
+    .poetryPreview {
+        position: relative;
+        top: 80px;
+        margin-right: 10px;
+    }
+
+}

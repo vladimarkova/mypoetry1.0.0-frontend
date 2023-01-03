@@ -30,17 +30,41 @@ nav {
                 border-radius: 5px;
                 box-shadow: 0 0 10px rgba(0,0,0,0.89);
             }
-    
-            &:hover {
-                color: rgba(51, 51, 51, 0.9);
+
+            .navLink {
+
+                h5 {
+                    color: 'white';
+                    text-decoration: 'none';
+                    transition: all 0.3s ease-out;
+
+                    &:hover {
+                        color: rgba(51, 51, 51, 0.89);
+                    }
+                }
+
             }
+
+            &:hover {
+                opacity: 0.85;
+            }
+
         }
 
         .addPoetry {
             padding-left: 10px;
+        }
+    }
+
+    .poetryLink {
+
+        h5 {
+            font-size: 1.1rem;
+            transition: all 0.3s ease-out;
 
             &:hover {
-                text-decoration: underline;
+                color: rgb(255, 195, 160);
+                // color: #ffece1;
             }
         }
     }
