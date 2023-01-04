@@ -20,8 +20,13 @@ const Navbar = () => {
                     <Link to='/add-poetry' style={{ color: 'white', textDecoration: 'none'}} className={styles.poetryLink}><h5>Добави стих</h5></Link>
                 </div>
             </div>
-            <div className={styles.info}>
-                <Link to='/' style={{ color: 'white', textDecoration: 'none'}} className={styles.poetryLink}><h5>Стани автор</h5></Link>
+            <div className={styles.rightSide}>
+                <div className={styles.info}>
+                    <Link to='/' style={{ color: 'white', textDecoration: 'none'}} className={styles.poetryLink}><h5>Стани автор</h5></Link>
+                </div>
+                <div className={styles.info}>
+                    <Link to='/about' style={{ color: 'white', textDecoration: 'none'}} className={styles.poetryLink}><h5>About</h5></Link>
+                </div>
             </div>
         </nav>
     )

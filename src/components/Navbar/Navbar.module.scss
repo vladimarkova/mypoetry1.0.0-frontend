@@ -56,6 +56,15 @@ nav {
         }
     }
 
+    .rightSide {
+        display: flex;
+        justify-content: space-around;
+
+        .info {
+            padding-right: 5px;
+        }
+    }
+
     .poetryLink {
 
         h5 {
