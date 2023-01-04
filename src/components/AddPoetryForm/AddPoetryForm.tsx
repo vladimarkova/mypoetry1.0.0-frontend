@@ -28,7 +28,7 @@ const AddPoetryForm = () => {
                 </div>
             </div>
             <div className={styles.poetryPreview}>
-             <Poetry poetry={poetry} showFav={false}/>
+             <Poetry poetry={poetry} showFav={false} showAnimation={false}/>
             </div>
         </div>
     )
