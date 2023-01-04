@@ -42,7 +42,7 @@ const Poetry = ({ poetry, showFav = true } : { poetry?: IPoetry, showFav?: boole
                         (<div className={styles.notFav}><i className="fa-regular fa-heart fa-xl"></i></div>)}
                 </div>}
                 <div className={styles.content}>
-                    <p dangerouslySetInnerHTML={{__html: replaceWithBr(poetry?.content)}} />
+                    <p dangerouslySetInnerHTML={{__html: (replaceWithBr(poetry?.content) || replaceWithBr(firstPoetry))}} />
                     {/* { poetry?.content } */}
                     {/* Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum eius consequuntur atque velit laudantium laboriosam. Deleniti, totam ratione aperiam autem reiciendis maiores officia quibusdam repellendus, magnam aspernatur minus unde debitis ad dolorem natus numquam sapiente quidem molestias quos! Animi doloremque reprehenderit molestiae veritatis voluptatum beatae recusandae odit ea unde alias? */}
                     {/* <br></br>

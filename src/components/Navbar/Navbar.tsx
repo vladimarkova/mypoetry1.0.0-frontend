@@ -14,6 +14,9 @@ const Navbar = () => {
                 </div> */}
                 {/* TODO: If user */}
                 <div className={styles.addPoetry}>
+                    <Link to='/poetries' style={{ color: 'white', textDecoration: 'none'}} className={styles.poetryLink}><h5>Моите стихове</h5></Link>
+                </div>
+                <div className={styles.addPoetry}>
                     <Link to='/add-poetry' style={{ color: 'white', textDecoration: 'none'}} className={styles.poetryLink}><h5>Добави стих</h5></Link>
                 </div>
             </div>
