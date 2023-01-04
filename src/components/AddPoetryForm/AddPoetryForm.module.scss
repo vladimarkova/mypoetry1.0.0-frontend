@@ -5,7 +5,7 @@
 
     .formContainer {
         width: 480px;
-        max-height: 400px; // TODO: fix to be flexible
+        max-height: 600px; // TODO: fix to be flexible
         background-color: white;
         border-radius: 7px;
         padding: 10px 0px;
@@ -31,9 +31,6 @@
                 margin-right: 7px;
             }
 
-            // h5 {
-            //     align-self: flex-start;
-            // }
         }
 
         .formContent {
@@ -47,6 +44,8 @@
                 border: none;
                 overflow: auto;
                 resize: none;
+                font-size: larger;
+                // font-family: 'Philosopher', serif;
 
                 &:active, &:focus {
                     outline: none;

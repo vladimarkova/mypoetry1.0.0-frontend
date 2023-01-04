@@ -22,7 +22,7 @@ const AddPoetryForm = () => {
                     <h5>{ dummyUser.name }</h5>
                 </div>
                 <div className={styles.formContent}>
-                    <textarea rows={10} cols={50} value={poetry.content} onChange={(e) => setPoetry({ ...poetry, content: e.target.value })} placeholder="Публикувайте стих..." />
+                    <textarea rows={20} cols={50} value={poetry.content} onChange={(e) => setPoetry({ ...poetry, content: e.target.value })} placeholder="Публикувайте стих..." />
                     <input type="date" onChange={(e) => setPoetry({ ...poetry, date: e.target.value })} />
                     <button disabled={!poetry.content} onClick={handleSubmit}>Публикувай</button>
                 </div>

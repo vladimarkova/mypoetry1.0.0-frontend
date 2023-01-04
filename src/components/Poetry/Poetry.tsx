@@ -8,6 +8,26 @@ interface IPoetry {
     date?: string;
 }
 
+const firstPoetry = `Ей за такива моменти
+И ей за такива съдби
+Аз мечтая, събирам копнежи
+Дъждът за слънце мълви
+
+А колко е красиво само
+Колко е било, но даже и преди
+Един докоснат спомен, рамо
+Една жена, и мъж, и няколко сълзи
+
+Една Земя, по Коледа, и пролет
+Беше някога красиво, може би
+Аз не смея вече да говоря
+Но как боли, боли, нали...`;
+console.log(firstPoetry);
+
+const replaceWithBr = (str?: string) => {
+    return str? str.replace(/\n/g, "<br />") : '';
+  }
+
 const Poetry = ({ poetry, showFav = true } : { poetry?: IPoetry, showFav?: boolean }) => {
     const [favorite, setFavorite]= useState(false);
 
@@ -22,8 +42,9 @@ const Poetry = ({ poetry, showFav = true } : { poetry?: IPoetry, showFav?: boole
                         (<div className={styles.notFav}><i className="fa-regular fa-heart fa-xl"></i></div>)}
                 </div>}
                 <div className={styles.content}>
-                    { poetry?.content }
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum eius consequuntur atque velit laudantium laboriosam. Deleniti, totam ratione aperiam autem reiciendis maiores officia quibusdam repellendus, magnam aspernatur minus unde debitis ad dolorem natus numquam sapiente quidem molestias quos! Animi doloremque reprehenderit molestiae veritatis voluptatum beatae recusandae odit ea unde alias?
+                    <p dangerouslySetInnerHTML={{__html: replaceWithBr(poetry?.content)}} />
+                    {/* { poetry?.content } */}
+                    {/* Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum eius consequuntur atque velit laudantium laboriosam. Deleniti, totam ratione aperiam autem reiciendis maiores officia quibusdam repellendus, magnam aspernatur minus unde debitis ad dolorem natus numquam sapiente quidem molestias quos! Animi doloremque reprehenderit molestiae veritatis voluptatum beatae recusandae odit ea unde alias? */}
                     {/* <br></br>
                     И няма да пиша днес.
                     <br></br>

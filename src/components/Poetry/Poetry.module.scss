@@ -55,13 +55,14 @@
         }
 
         .content {
-            padding: 1px 50px 10px 50px;
+            padding: 40px 50px 40px 50px;
             text-align: justify;
             font-family: 'Philosopher', serif;
             font-size: larger;
             font-weight: bold;
 
             .heart {
+                padding-top: 30px;
                 color: red;;
             }
         }
