@@ -1,9 +1,10 @@
-import { useEffect, useState } from 'react';
-import Poetry from '../Poetry/Poetry';
-import styles from './PoetryList.module.scss';
+// import Poetry from '../Poetry/Poetry';
+// import styles from './PoetryList.module.scss';
 import { IPoetry } from '../../interfaces/poetry';
+import Carousel from '../Carousel/Carousel';
 
 const firstPoetry: IPoetry = {
+    id: '1',
     content: `Ей за такива моменти
     И ей за такива съдби
     Аз мечтая, събирам копнежи
@@ -24,6 +25,7 @@ const firstPoetry: IPoetry = {
 };
 
 const secondPoetry: IPoetry = {
+    id: '2',
     content: `И няма да пиша днес.
     Не, няма. А само ще слушам. 
     Какво ли ще бъде наред?
@@ -43,6 +45,7 @@ const secondPoetry: IPoetry = {
 };
 
 const thirdPoetry: IPoetry = {
+    id: '3',
     content: `Една раздяла, тъй, на прага
     Една ръка, протегната за две
     Защо ли плаках, тиха, даже неразбрала
@@ -63,28 +66,9 @@ const thirdPoetry: IPoetry = {
 
 const PoetryList = () => {
     const poetryList = [firstPoetry, secondPoetry, thirdPoetry];
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const carouselInfiniteScroll = () => {
-        if (currentIndex === poetryList.length - 1) {
-            return setCurrentIndex(0);
-        }
-        return setCurrentIndex(currentIndex + 1);
-    }
-
-    useEffect(() => {
-        const interval = setInterval(() => { carouselInfiniteScroll() }, 15000);
-        // clean up function
-        return () => clearInterval(interval);
-    });
 
     return (
-        <div className={styles.carouselContainer}>
-                { poetryList.map((poetry, index) => {
-                    return <div className={styles.carouselItem} style={{ transform: `translate(-${currentIndex * 100}%)` }} key={index}>
-                        <Poetry poetry={poetry} />
-                    </div>
-                }) }
-            </div>
+        <Carousel listItems={poetryList} />
     )
   }
   
