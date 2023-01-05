@@ -1,0 +1,13 @@
+.carouselContainer {
+    display: flex;
+    flex-wrap: nowrap;
+
+    .carouselItem {
+        min-width: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 1s cubic-bezier(0.39, 0.575, 0.565, 1);
+    }
+}

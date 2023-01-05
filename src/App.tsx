@@ -3,7 +3,7 @@ import About from './components/About/About';
 import AddPoetryForm from './components/AddPoetryForm/AddPoetryForm';
 import Home from './components/Home/Home';
 import Layout from "./components/Layout/Layout";
-import Poetry from "./components/Poetry/Poetry";
+import PoetryList from './components/PoetryList/PoetryList';
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/add-poetry' element={<AddPoetryForm />} />
-        <Route path='/poetries' element={<Poetry />} />
+        <Route path='/poetries' element={<PoetryList />} />
         <Route path='/about' element={<About />} />
       </Routes>
     </Router>

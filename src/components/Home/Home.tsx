@@ -1,9 +1,10 @@
 // import styles from './Home.module.scss';
-import Poetry from "../Poetry/Poetry"
+
+import PoetryList from "../PoetryList/PoetryList"
 
 const Home = () => {
     return (
-        <Poetry />
+        <PoetryList />
     )
   }
   
