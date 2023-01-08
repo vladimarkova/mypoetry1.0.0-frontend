@@ -4,17 +4,21 @@ import styles from './Register.module.scss';
 
 const Register = () => {
     const [inputs, setInputs] = useState({ username: "", names: "", password: "", passwordRepeat: "" });
+    const [file, setFile] = useState<any>();
     
     const handleChange = (event: any) => {
         const name = event.target.name;
         const value = event.target.value;
         setInputs(values => ({...values, [name]: value}))
-      }
+    }
+
+    const handleFileUpload = (event: any) => {
+        setFile(URL.createObjectURL(event.target.files[0]));
+    }
     
     const handleSubmit = (event: any) => {
         event.preventDefault();
         if (!inputs.username || !inputs.names || !inputs.password || !inputs.passwordRepeat || inputs.password !== inputs.passwordRepeat) {
-            // alert('Invalid input!');
             toast.error('Invalid input!', {
                 position: "bottom-right",
                 autoClose: 5000,
@@ -52,6 +56,11 @@ const Register = () => {
                         <label>
                             <h3>Повтори парола</h3>
                             <input name="passwordRepeat" type="password" value={inputs.passwordRepeat} onChange={handleChange} required />
+                        </label>
+                        <label>
+                            <h3>Снимка на профила</h3>
+                            <input type="file" onChange={handleFileUpload} />
+                            <img src={file} alt="Profile pic" />
                         </label>
                         <button onClick={handleSubmit}>Запиши</button>
                     </form>
