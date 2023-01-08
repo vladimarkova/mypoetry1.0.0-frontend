@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
 import styles from './Register.module.scss';
 
 const Register = () => {
@@ -12,6 +13,21 @@ const Register = () => {
     
     const handleSubmit = (event: any) => {
         event.preventDefault();
+        if (!inputs.username || !inputs.names || !inputs.password || !inputs.passwordRepeat || inputs.password !== inputs.passwordRepeat) {
+            // alert('Invalid input!');
+            toast.error('Invalid input!', {
+                position: "bottom-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
+            return;
+        }
+        toast("Wow so easy!");
         console.log(inputs);
     }
 
@@ -39,6 +55,18 @@ const Register = () => {
                         </label>
                         <button onClick={handleSubmit}>Запиши</button>
                     </form>
+                    <ToastContainer
+                        position="bottom-right"
+                        autoClose={5000}
+                        hideProgressBar={false}
+                        newestOnTop={false}
+                        closeOnClick
+                        rtl={false}
+                        pauseOnFocusLoss
+                        draggable
+                        pauseOnHover
+                        theme="light"
+                    />
                 </div>
             </div>
         </div>

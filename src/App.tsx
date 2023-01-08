@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import 'react-toastify/dist/ReactToastify.css';
 import About from './components/About/About';
 import AddPoetryForm from './components/AddPoetryForm/AddPoetryForm';
 import Home from './components/Home/Home';
