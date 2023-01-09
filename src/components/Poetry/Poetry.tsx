@@ -25,29 +25,39 @@ const replaceWithBr = (str?: string) => {
 
 const Poetry = ({ poetry, showFav = true } : { poetry?: IPoetry, showFav?: boolean, showAnimation?: boolean }) => {
     const [favorite, setFavorite]= useState(false);
+    const loves = 9;
 
     return (
         <div className={styles.main}>  
-            <div className={styles.poetryCard}>
-                {showFav && <div className={styles.favorite} onClick={() => setFavorite(!favorite)}>
-                    {favorite ? 
-                        (<div className={styles.fav}><i id="fav" className="fa-solid fa-heart fa-xl"></i></div>) : 
-                        (<div className={styles.notFav}><i className="fa-regular fa-heart fa-xl"></i></div>)}
-                </div>}
-                <div className={styles.content}>
-                    <p dangerouslySetInnerHTML={{__html: (replaceWithBr(poetry?.content))}} />
-                    <div className={styles.heart}>
-                    ❤
+            <div className={styles.container}>
+                <div className={styles.poetryCard}>
+                    {(showFav && !window.location.href.includes('my-poetries')) && <div className={styles.favorite} onClick={() => setFavorite(!favorite)}>
+                        {favorite ? 
+                            (<div className={styles.fav}><i id="fav" className="fa-solid fa-heart fa-xl"></i></div>) : 
+                            (<div className={styles.notFav}><i className="fa-regular fa-heart fa-xl"></i></div>)}
+                    </div>}
+                    <div className={styles.content}>
+                        <p dangerouslySetInnerHTML={{__html: (replaceWithBr(poetry?.content))}} />
+                        <div className={styles.heart}>
+                        ❤
+                        </div>
+                    </div>
+                    <div className={styles.info}>
+                        <div className={styles.date}>
+                            { poetry?.date || '24.12.2021'}
+                        </div>
+                        <div className={styles.author}>
+                            { poetry?.user || 'Влади М.' }
+                        </div>
                     </div>
                 </div>
-                <div className={styles.info}>
-                    <div className={styles.date}>
-                        { poetry?.date || '24.12.2021'}
-                    </div>
-                    <div className={styles.author}>
-                        { poetry?.user || 'Влади М.' }
-                    </div>
-                </div>
+                { window.location.href.includes('my-poetries') && 
+                    <div className={styles.loves}>
+                        <div className={styles.number}>{ loves }
+                            {/* <h3>{ loves }</h3> */}
+                        </div>
+                        <i className="fa-solid fa-heart fa-xl"></i>
+                    </div>}
             </div>
         </div>
     )

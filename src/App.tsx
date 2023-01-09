@@ -17,7 +17,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/add-poetry' element={<AddPoetryForm />} />
-        <Route path='/poetries' element={<PoetryList />} />
+        <Route path='/my-poetries' element={<PoetryList />} />
         <Route path='/about' element={<About />} />
         <Route path='/sign-up' element={<Register />} />
         <Route path='/sign-in' element={<Login />} />
