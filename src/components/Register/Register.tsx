@@ -57,10 +57,13 @@ const Register = () => {
                             <h3>Повтори парола</h3>
                             <input name="passwordRepeat" type="password" value={inputs.passwordRepeat} onChange={handleChange} required />
                         </label>
-                        <label>
+                        <label className={styles.customFileUpload}>
                             <h3>Снимка на профила</h3>
-                            <input type="file" onChange={handleFileUpload} />
-                            <img src={file} alt="Profile pic" />
+                            <div className={styles.content}>
+                                <i id="upload" className="fa-solid fa-upload fa-xl"></i>
+                                <input type="file" onChange={handleFileUpload} style={{display:'none'}} />
+                                {file && <img src={file} alt="Profile pic" />}
+                            </div>
                         </label>
                         <button onClick={handleSubmit}>Запиши</button>
                     </form>

@@ -42,6 +42,28 @@
                         }
                     }
 
+                    img {
+                        width: 60px;
+                        height: 60px;
+                        border-radius: 50%;
+                        box-shadow: 0 0 10px rgba(0,0,0,0.65);
+                    }
+
+                }
+
+                .content {
+                    // width: 28%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+
+                .customFileUpload {
+                    cursor: pointer;
+                }
+
+                #upload {
+                    padding-top: 15px;
                 }
                 
                 button {
